@@ -22,10 +22,17 @@
         .ash-color{
             color: rgba(19, 19, 19, 0.6);
         }
-        .category-btn{
-            background-color: white;
-            border-color: rgba(19, 19, 19, 0.6);
+        .light-ash-color{
+          color: rgba(19, 19, 19, 0.1)
         }
+        .card-text{
+          color: rgba(19, 19, 19, 0.7);
+        }
+        .responsive-div {
+          max-height: 60vh; 
+          overflow-y: auto; 
+        }
+        
     </style>
 </head>
 <body class=".lato">
@@ -78,6 +85,59 @@
  
           </div>
       </Section>
+
+      <section class="w-10/12 mx-auto">
+        <div class="flex justify-between items-center">
+          <p class="text-xl font-bold">Best Deal for you</p>
+          <div id="sort-container"></div>
+        </div>
+      </section>
+
+      <section class="w-11/12 mx-auto mt-6 flex justify-around my-7">
+         <div id="datas" class="w-4/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-2 border-[light-ash-color] p-3 ">
+           
+         </div>
+         
+         <div id="liked-images" class="responsive-div w-[300px] grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 border-2 border-[light-ash-color]  ">
+
+         </div>
+      </section>
+
+      <section>
+        <!-- Modal Structure -->
+        <div id="adopt-modal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden">
+          <div class="bg-white p-6 rounded-lg text-center">
+            <h2 class="text-2xl font-bold text-[#0E7A81]">Congratulations!</h2>
+            <p class="text-lg mt-2">Your adoption request has been received.</p>
+            <p class="text-lg font-semibold mt-4"><span id="countdown">3</span></p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div id="spinner" class="hidden flex justify-center items-center h-20">
+          <div class="animate-spin rounded-full h-10 w-10 border-t-4 border-blue-500"></div>
+        </div>
+      </section>
+
+      <!-- Open the modal using ID.showModal() method -->
+      <button class="btn hidden" onclick="customModal.showModal()">open modal</button>
+      <dialog id="customModal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+          <div id="modal-content">
+            
+          </div>
+          <div class="modal-action">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+      
+
+      
       <!-- Ending Main Part -->
 
     <script src="Script/data.js"></script>
