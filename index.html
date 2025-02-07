@@ -23,7 +23,10 @@
             color: rgba(19, 19, 19, 0.6);
         }
         .light-ash-color{
-          color: rgba(19, 19, 19, 0.1)
+          color: rgba(19, 19, 19, 0.1);
+        }
+        .light-white{
+          color: rgba(255, 255, 255, 0.6);
         }
         .card-text{
           color: rgba(19, 19, 19, 0.7);
@@ -32,6 +35,26 @@
           max-height: 60vh; 
           overflow-y: auto; 
         }
+
+        #Categories {
+        display: flex;
+        flex-wrap: wrap; /* Allow buttons to wrap */
+        gap: 10px; /* Space between buttons */
+        justify-content: center; /* Align buttons to center */
+        }
+
+        /* On Mobile, make the buttons stack vertically */
+        @media (max-width: 768px) {
+          #Categories {
+            flex-direction: column; /* Stack buttons vertically */
+            align-items: center; /* Center buttons */
+          }
+
+          .category-button {
+            width: 100%; /* Full width buttons */
+            max-width: 300px; /* Keep a max-width for neat design */
+          }
+       }
         
     </style>
 </head>
@@ -59,15 +82,15 @@
       <!-- Ending Navbar Section -->
 
       <!-- Starting Banner Section -->
-       <section class="w-3/4 mx-auto mt-5">
+       <section class="w-full lg:w-3/4 mx-auto mt-5">
          <div class="w-3/4 mx-auto text-center">
             <div class="flex items-center justify-center gap-2">
                 <h4 class="ash-color mt-4 text-lg font-semibold">Bringing Families Together</h4>
                 <img src="Assets/love.png" alt="">
             </div>
-            <h2 class="text-5xl text-[#131313] font-bold w-3/4 mx-auto mt-4">Your Path to Adoption Starts Here</h2>
+            <h2 class="text-2xl lg:text-5xl text-[#131313] font-bold w-3/4 mx-auto mt-4">Your Path to Adoption Starts Here</h2>
             <p class="text-[14px] text-[#131313] w-3/4 mx-auto mt-4">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
-            <button class="bg-[#0E7A81] py-2 px-4 text-[white] rounded-md mt-4">View More</button>
+            <button class="bg-[#0E7A81] py-2 px-4 text-[white] rounded-md mt-4"><a href="#adoptlinker">View More</a></button>
             <img src="Assets/pet.webp" class="w-3/4 mx-auto"  alt="">
          </div>
        </section>
@@ -75,7 +98,7 @@
      <!-- Ending Header Part -->
 
      <!-- Starting Main Part -->
-      <Section class="w-9/12 mx-auto mt-6 mb-6">
+      <Section id="adoptlinker" class="w-[full] lg:w-9/12 mx-auto mt-6 mb-6">
           <div class="w-3/4 mx-auto text-center">
             <h3 class="text-[30px] text-[#131313] font-bold">Adopt  Your  Best Friend</h3>
             <p class="w-3/4 mx-auto mt-3 ash-color">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a.</p>
@@ -93,15 +116,14 @@
         </div>
       </section>
 
-      <section class="w-11/12 mx-auto mt-6 flex justify-around my-7">
-         <div id="datas" class="w-4/6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-2 border-[light-ash-color] p-3 ">
-           
-         </div>
-         
-         <div id="liked-images" class="responsive-div w-[300px] grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 border-2 border-[light-ash-color]  ">
-
-         </div>
-      </section>
+      <section class="w-full lg:w-11/12 mx-auto mt-6 flex flex-col lg:flex-row justify-around my-7">
+        <div id="datas" class="w-full lg:w-4/6 mx-auto lg:mx-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 border-2 border-[light-ash-color] p-3">
+        </div>
+    
+        <div id="liked-images" class="responsive-div w-[300px] grid grid-cols-1 lg:grid-cols-2 gap-4 p-3 border-2 border-[light-ash-color]">
+        </div>
+    </section>
+    
 
       <section>
         <!-- Modal Structure -->
@@ -135,10 +157,48 @@
           </div>
         </div>
       </dialog>
-      
-
-      
       <!-- Ending Main Part -->
+
+      <!-- Starting footer part -->
+       <section class="bg-[#1E1E1E] flex-wrap lg:flex justify-around  p-10">
+          <div class="text-[white] mb-6 text-center lg:text-start">
+            <div class="flex items-center mb-4 ml-11 lg:ml-0">
+              <span><img src="Assets/logo.webp" alt=""></span>
+              <h5 class="ml-3 text-3xl text-[white] font-bold ">Peddy</h5>
+            </div>
+            <p>Location: av. Washington 165, NY CA </p>
+            <p>54003</p>
+            <p>Phone: +31 85 964 47 25</p>
+            <p>Email: info@yourdomain.com</p>
+            <p>Openings hours: 9.00 AM - 5.00 PM</p>
+            <div class=" flex justify-around mt-4 lg:w-[300px] w-[200px]">
+               <a href=""><img src="Assets/facebook.png" alt=""></a>
+               <a href=""><img src="Assets/X.png" alt=""></a> 
+               <a href=""><img src="Assets/youtube.png" alt=""></a> 
+               <a href=""><img src="Assets/Instagram.png" alt=""></a>
+            </div>
+          </div>
+
+          <div class="text-[white] text-center lg:text-start">
+            <h4 class="text-xl mb-6">Useful Links</h4>
+            <div class="light-white">
+              <p><a href="">Home</a></p> 
+              <p><a href="">About Us</a></p> 
+              <p><a href="">Animals</a></p> 
+              <p><a href="">Foundation</a></p> 
+              <p><a href="">Contact</a></p>
+            </div> 
+          </div>
+
+          <div class="text-white text-center lg:text-start mt-7">
+            <h4 class="text-2xl font-bold mb-6">Drop A Message</h4>
+            <input class="bg-[#FFFFFF] bg-opacity-5 py-2 w-[250px]" type="email" placeholder="Enter your Email">
+            <div>
+              <button class="bg-[#0E7A81] w-[250px] py-2 my-1">Subscribe</button>
+            </div>
+          </div>
+       </section>
+       <!-- Ending footer part -->
 
     <script src="Script/data.js"></script>
 </body>

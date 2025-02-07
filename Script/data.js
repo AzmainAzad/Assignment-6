@@ -61,9 +61,12 @@ const filterPets = (category) => {
 
     if (filteredPets.length === 0) {
       petContainer.innerHTML = `
-        <div class="text-center text-red-500 font-bold text-xl col-span-3">
-          No Information Available
-        </div>
+          <div class="grid place-items-center h-64 bg-slate-400 py-10 text-red-500 font-bold text-xl col-span-3">
+            <div class="text-center">
+             <img src="Assets/error.webp" class="w-24 h-24 mx-auto mb-4">
+             <p>No Information Available</p>
+            </div>
+          </div>
       `;
     } else {
       displayPets(filteredPets);
@@ -163,10 +166,10 @@ const displayPets = (pets) => {
     const birthDate = item.date_of_birth ? item.date_of_birth : "Information Unavailable";
 
     const card = document.createElement("div");
-    card.classList = "card card-compact w-[300px] border-2 border-[light-ash-color]";
+    card.classList = "card card-compact w-[full] lg:w-[300px] lg:w-[full] border-2 border-[light-ash-color]";
     card.innerHTML = `
       <figure class="rounded-xl">
-        <img class="p-4 pet-image" src="${item.image}" />
+        <img class="p-4 pet-image" src="${item.image}"/>
       </figure>
       <div class="card-body">
         <h2 class="card-title">${item.pet_name}</h2>
